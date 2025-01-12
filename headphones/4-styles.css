@@ -1,0 +1,213 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans Pro", serif;
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 100px;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 1000;
+}
+.logo-container {
+  width: 175px;
+}
+.logo-container img {
+  width: 100%;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  list-style-type: none;
+}
+ul li a {
+  color: white;
+  text-decoration: none;
+}
+ul li a:hover {
+  color: #ff6565;
+}
+.hero-section {
+  height: 100vh;
+  background: url("./images/headphones_hero_1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  z-index: 0;
+}
+
+/* Hero Section Content */
+.hero-section h1 {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.bold-p {
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.long-p {
+  width: 550px;
+}
+
+.hero-section button {
+  background: #ff6565;
+  padding: 15px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  width: 160px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.hero-section button:hover {
+  opacity: 0.9;
+}
+
+.what-we-do-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+.what-we-do-text {
+  width: 600px;
+}
+.card-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 90px;
+  margin-left: 90px;
+  margin-right: 90px;
+  gap: 100px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.our-results-section {
+  background: url("images/headphones_hero_2.jpg");
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+.our-results-text {
+  width: 600px;
+}
+.card1 {
+  background: url("images/pentagone.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: scale(1.5);
+}
+.card-text1 {
+  font-size: medium;
+}
+.card1 h2 {
+  margin-bottom: 0;
+  font-weight: bolder;
+}
+.card1-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: smaller;
+}
+.contact-form-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.contact-form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 400px;
+}
+.name-input,
+.email-input,
+.message-input {
+  border-top: none;
+  border-bottom: 1px solid black;
+  border-left: none;
+  border-right: none;
+}
+.name-input::placeholder,
+.email-input::placeholder,
+.message-input::placeholder {
+  font-size: 18px;
+  color: rgb(168, 167, 167); /* Optional: Change placeholder text color */
+}
+.btn-holder {
+  display: flex;
+  justify-content: center;
+}
+.send-btn {
+  padding: 10px;
+  color: white;
+  background: #ff6565;
+  border: none;
+  border-radius: 16px;
+  width: 160px;
+}
+.send-btn:hover {
+  opacity: 0.9;
+}
+footer {
+  background: #071629;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  color: white;
+}
+.footer-links-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 400px;
+}
+.footer-logo-container {
+  width: 150px;
+}
+.footer-logo-container img {
+  width: 100%;
+}
+.social-links a {
+  text-decoration: none;
+}
+.copyright-text {
+  opacity: 35%;
+}
