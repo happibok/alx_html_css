@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Source Sans Pro", serif;
+  text-align: center;
 }
 nav {
   display: flex;
@@ -89,18 +90,20 @@ ul li a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  padding: 220px;
+  padding-bottom: 100px;
 }
 .what-we-do-text {
-  width: 600px;
+  text-align: center;
 }
 .card-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
   margin-top: 90px;
   margin-left: 90px;
   margin-right: 90px;
-  gap: 100px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  gap: 50px;
 }
 .card {
   display: flex;
@@ -117,23 +120,25 @@ ul li a:hover {
 }
 .our-results-section {
   background: url("images/headphones_hero_2.jpg");
+  background-repeat: no-repeat;
+  background-color: #071629;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  padding: 220px;
 }
 .our-results-text {
-  width: 600px;
+  text-align: center;
 }
 .card1 {
   background: url("images/pentagone.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  transform: scale(1.5);
-  transition: transform 0.5s ease;
+  width: 180px;
+  height: 170px;
 }
 .card1:hover::before {
   animation: pulse 1s ease-in-out infinite;
@@ -150,6 +155,7 @@ ul li a:hover {
   margin-bottom: 0;
   font-weight: bolder;
   transition: all 0.4s;
+  font-size: 46px;
 }
 
 .card1-body p:hover {
@@ -245,3 +251,47 @@ footer {
     transform: scale(1.1);
   }
 }
+
+@media only screen and (max-width: 600px) {
+    .card-container {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+
+    .our-results-section {
+        padding: 220px 40px;
+    }
+
+    .what-we-do-section {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+  }
+
+  @media only screen and (min-width: 600px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .our-results-section {
+        padding: 220px 40px;
+    }
+
+    .what-we-do-section {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+  }
+
+@media only screen and (min-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: none;
+    }
+    .our-results-section, .what-we-do-section{
+        padding: 220px;
+    }
+
+ 
+  } 

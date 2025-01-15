@@ -1,109 +1,42 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Source Sans Pro", serif;
-}
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  gap: 100px;
-
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 10px 0;
-  z-index: 1000;
-}
-.logo-container {
-  width: 175px;
-}
-.logo-container img {
-  width: 100%;
-}
-ul {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  list-style-type: none;
-}
-ul li a {
-  color: white;
-  text-decoration: none;
-}
-ul li a:hover {
-  color: #ff6565;
-}
-.hero-section {
-  height: 100vh;
-  background: url("./images/headphones_hero_1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  position: relative;
-  z-index: 0;
-}
-
-/* Hero Section Content */
-.hero-section h1 {
-  font-weight: bold;
-  margin-bottom: 0;
-}
-
-.bold-p {
-  margin-top: 0;
-  font-weight: bold;
-}
-
-.long-p {
-  width: 550px;
-}
-
-.hero-section button {
-  background: #ff6565;
-  padding: 15px;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 20px;
-  width: 160px;
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
-
-.hero-section button:hover {
-  opacity: 0.9;
-}
-
 .what-we-do-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 90vh;
+  padding: 20px;
 }
 .what-we-do-text {
   width: 600px;
 }
 .card-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
   margin-top: 90px;
   margin-left: 90px;
   margin-right: 90px;
 }
+
+@media (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 .card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  & > img {
+    margin-bottom: 32px;
+  }
 }

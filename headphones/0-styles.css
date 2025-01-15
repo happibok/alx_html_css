@@ -1,23 +1,26 @@
+/* General Reset */
 html,
-body {
+body,
+h1,
+h2,
+p {
   margin: 0;
   padding: 0;
   font-family: "Source Sans Pro", serif;
-  overflow-x: hidden; 
+  text-align: center;
 }
 
+/* Navigation */
 nav {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  gap: 20px;
   position: fixed;
   top: 0;
   width: 100%;
   padding: 10px 20px;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.6); 
+}
 
 .logo-container {
   width: 175px;
@@ -31,7 +34,8 @@ ul {
   display: flex;
   flex-direction: row;
   gap: 20px;
-  list-style-type: none;
+  list-style: none;
+  margin: 0;
 }
 
 ul li a {
@@ -43,7 +47,57 @@ ul li a:hover {
   color: #ff6565;
 }
 
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
 
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+/* Mobile Styles */
+#menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+
+  ul {
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 60px;
+    padding: 20px;
+    border-radius: 8px;
+    display: none;
+  }
+
+  #menu-toggle:checked + .hamburger + ul {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Hero Section */
 .hero-section {
   height: 100vh;
   background: url("./images/headphones_hero_1.jpg");
@@ -51,36 +105,12 @@ ul li a:hover {
   background-size: cover;
   background-position: center;
   margin: 0;
-  padding: 0;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
-  position: relative;
-  z-index: 0;
-}
-
-/* Hero Section Content *
-.hero-section h1 {
-  font-weight: bold;
-  margin-bottom: 0;
-  font-size: 2.5rem;
-  text-align: center;
-}
-
-.bold-p {
-  margin-top: 0;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.long-p {
-  width: 550px;
-  max-width: 90%; 
-  text-align: center;
-  font-size: 1rem;
-  margin-top: 20px;
 }
 
 .hero-section button {
@@ -95,112 +125,15 @@ ul li a:hover {
   margin-bottom: 40px;
 }
 
-.hero-section button:hover {
-  opacity: 0.9;
+.long-p {
+  width: 550px;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 20px;
 }
 
-
-@media screen and (max-width: 480px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  ul {
-    display: none; /* Hide the default menu on small screens */
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    margin-top: 10px;
-    padding-left: 0;
-  }
-
-  ul li a {
-    padding: 10px;
-    text-align: left;
-    width: 100%;
-    color: white;
-  }
-
- 
-  .hamburger {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    position: relative;
-    cursor: pointer;
-  }
-
-  .hamburger:before,
-  .hamburger:after {
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    left: 0;
-    transition: all 0.3s ease;
-  }
-
-  .hamburger:before {
-    top: -8px;
-  }
-
-  .hamburger:after {
-    top: 8px;
-  }
-
-  
-  .hamburger.active:before {
-    transform: rotate(45deg);
-    top: 0;
-  }
-
-  .hamburger.active:after {
-    transform: rotate(-45deg);
-    top: 0;
-  }
-
-  .hamburger.active + ul {
-    display: block;
-  }
-
-  /* Adjust Hero Section */
-  .hero-section h1 {
-    font-size: 2rem;
-  }
-
-  .bold-p {
-    font-size: 1rem;
-  }
-
-  .long-p {
-    width: 90%;
-    font-size: 0.9rem;
-  }
-
-  .hero-section button {
-    width: 120px;
-    padding: 12px;
-  }
-@media screen and (max-width: 768px) {
-  .hero-section h1 {
-    font-size: 2.2rem;
-  }
-
-  .bold-p {
-    font-size: 1.1rem;
-  }
-
-  .long-p {
-    width: 80%;
-    font-size: 1rem;
-  }
-
-  .hero-section button {
-    width: 140px;
-    padding: 13px;
-  }
+@media (max-width: 768px) {
+    .long-p {
+        width: auto;
+    }
 }
